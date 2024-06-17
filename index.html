@@ -54,12 +54,12 @@
   <!-- cover -->
     <section>
         <div class="jumbotron text-center mt-0" style="padding-bottom: 0px;">
-            <div class="container-fluid">
+            <div class="container-fluid" style="margin-top: -3em;">
                 <div class="row">
                     <div class="col">
                         <!-- paper title -->
                         <h2 style="font-size:30px;">
-                            <b>VividDreamer</b>: Towards High-Fidelity and Efficient Text-to-3D Generation
+                            <b>VividDreamer: Towards High-Fidelity and Efficient Text-to-3D Generation</b>
                         </h2>
                         <!-- publication -->
 
@@ -83,7 +83,6 @@
                             <sup>2</sup>Guangdong Province Key Laboratory of Information Security Technology, Guangzhou, China<br>
                             <sup>3</sup>Key Laboratory of Machine Intelligence and Advanced Computing, Ministry of Education, China<br> -->
                         </h4>
-                        <br>
                         <!-- links -->
                         <div class="row justify-content-center">
                             <div>
@@ -125,16 +124,17 @@
             <div class="row">
                 <div class="col-12 text-center">
                 <!-- <h3>Abstract</h3> -->
-                    <div class="row justify-content-center" style="align-items:center; display:flex;">
+                    <div class="row justify-content-center" style="align-items:center; display:flex;margin-top: -1.5em;">
                         <div> 
                             <img src="imgs/Examples.png" alt="VividDreamer" class="img-responsive" width="100%"/>
                         </div>
                         <div>
-                            <h4><b>(a) Text-to-3D Examples</b></h4>
+                            <h4><b>Text-to-3D Examples</b></h4>
                         </div>
                     </div>
-                    <br>
-                    <div class="row justify-content-center" style="align-items:center; display:flex;">
+                    <hr style="margin-top: 0px;">
+                    <!-- <br> -->
+                    <div class="row justify-content-center" style="align-items:center; display:flex; margin-top: -1em;">
                         <div> 
                             <video autoplay loop playsinline muted style="width: 100%;">
                                 <source data-src="imgs/process.mp4" type="video/mp4" src="imgs/process.mp4">
@@ -143,28 +143,39 @@
                                 <source src="" type="video/mp4">
                             </video> -->
                         </div>
+                        <table style="table-layout: fixed;" width="100%">
+                            <tbody>
+                                <td width="33%"> 
+                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Iron Man</b></span>"</i></p>
+                                </td>
+                                <td width="33%"> 
+                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>bichon frise</b></span> <span style="color:#52B19A"><b>wearing academic regalia</b></span>"</i></p>
+                                </td>
+                                <td width="33%"> 
+                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>plush dragon toy</b></span>"</i></p>
+                                </td>
+                            </tbody>
+                        </table>
                         <div>
-                            <h4><b>(b) Training Process</b></h4>
+                            <h4><b>Training Process</b></h4>
                         </div>
                     </div>
                 </div>
-                <p class="text-justify">
+                <!-- <p class="text-justify">
                     <b>Examples of text-to-3D asset creations with our framework (a).</b> In this paper, we present <b>VividDreamer</b>, an efficient text-to-3D generation framework that can distill semantically-consistent textures and high-fidelity structures from pretrained 2D diffusion models using a novel <b>Pose-dependent Consistency Distillation Sampling</b> objective in a <b>coarse-to-fine optimization</b> manner, allowing to yield high-fidelity 3D objects (rows 1 and 2) and 3D avatars (row 3) based on the given text prompts. Specifically, <b>VividDreamer</b> achieves high training efficiency, which can create ready-to-use 3D assets within 10 minutes, while producing photorealistic 3D objects within 30 minutes <b>(b)</b>.
-                </p>
+                </p> -->
             </div>
         </div>
     </section>
-    <br>
 
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
+                <div class="col-12 text-left">
                     <h3>Abstract</h3>
-                    <br>
                 </div>
                 <p class="text-justify">
-                    Text-to-3D generation aims to create 3D assets from text-to-image diffusion models. However, existing methods face an inherent bottleneck in generation quality because the widely-used objectives such as Score Distillation Sampling (SDS) inappropriately omit U-Net jacobians for swift generation, leading to significant bias compared to the ''true'' gradient obtained by full denoising sampling. This bias brings inconsistent updating direction, resulting in implausible 3D generation (<i>e.g.,</i> color deviation, Janus problem, and semantically inconsistent details). In this work, we propose <b>Pose-dependent Consistency Distillation Sampling</b> (PCDS), a novel yet efficient objective for diffusion-based 3D generation tasks. Specifically, <b>PCDS</b> builds the <b>pose-dependent consistency function</b> within diffusion trajectories, allowing to approximate true gradients through minimal sampling steps (1~3). Compared to SDS, <b>PCDS</b> can acquire a more accurate updating direction with the same sampling time (1 sampling step), while enabling few-step (2~3) sampling to trade compute for higher generation quality. For efficient generation, we propose a coarse-to-fine optimization strategy, which first utilizes 1-step <b>PCDS</b> to create the basic structure of 3D objects, and then gradually increases <b>PCDS</b> steps to generate fine-grained details. Extensive experiments demonstrate that our approach outperforms the state-of-the-art in generation quality and training efficiency, conspicuously alleviating the implausible 3D generation issues caused by the deviated updating direction. Moreover, it can be simply applied to many 3D generative applications to yield impressive 3D assets.
+                    Text-to-3D generation aims to create 3D assets from text-to-image diffusion models. However, existing methods face an inherent bottleneck in generation quality because the widely-used objectives such as Score Distillation Sampling (SDS) inappropriately omit U-Net jacobians for swift generation, leading to significant bias compared to the ''true'' gradient obtained by full denoising sampling. This bias brings inconsistent updating direction, resulting in implausible 3D generation (<i>e.g.,</i> color deviation, Janus problem, and semantically inconsistent details). In this work, we propose <b>Pose-dependent Consistency Distillation Sampling</b> (PCDS), a novel yet efficient objective for diffusion-based 3D generation tasks. Specifically, <b>PCDS</b> builds the <b>pose-dependent consistency function</b> within diffusion trajectories, allowing to approximate true gradients through minimal sampling steps (1~3). Compared to SDS, <b>PCDS</b> can acquire a more accurate updating direction with the same sampling time (1 sampling step), while enabling few-step (2~3) sampling to trade compute for higher generation quality. For efficient generation, we propose a coarse-to-fine optimization strategy, which first utilizes 1-step <b>PCDS</b> to create the basic structure of 3D objects, and then gradually increases <b>PCDS</b> steps to generate fine-grained details. Extensive experiments demonstrate that our approach outperforms the state-of-the-art in generation quality and training efficiency, conspicuously alleviating the implausible 3D generation issues caused by the deviated updating direction. Specifically, <b>VividDreamer</b> can create ready-to-use 3D assets within 10 minutes, while produces photorealistic 3D objects within 30 minutes. Moreover, it can be simply applied to many 3D generative applications to yield impressive 3D assets, such as <b>3D portrait and avatar generation</b> and <b>text-to-3D editing</b>.
                 </p>
             </div>
         </div>
@@ -196,9 +207,8 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
+                <div class="col-12 text-left">
                     <h3>Motivation</h3> 
-                    <br>
                     <div class="row justify-content-center" style="align-items:center; display:flex;">
                         <div> 
                             <img src="imgs/difference.png" alt="VividDreamer" class="img-responsive" width="100%"/>
@@ -246,374 +256,448 @@
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
-                    <hr style="margin-top:0px">
+                <div class="text-left">
+                    <!-- <hr style="margin-top:0px"> -->
                     <h3>Visual Comparisons</h3>
+                </div>
+                <div class="text-center">
                     <table style="table-layout: fixed;" width="100%">
                         <tbody>
                             <tr>
-                                <td width="20%"> 
-                                    <p style="font-size: larger;margin-bottom: 0em;">DreamFusion (SDS)</p><p style="font-size: large;">(~1h)</p>
+                                <td width="15%"></td>
+                                <td width="17%"> 
+                                    <p style="font-size: larger;margin-bottom: 0em;">Stable DreamFusion</p><p style="font-size: large;">(~1h)</p>
                                 </td>
-                                <td width="20%"> 
-                                    <p style="font-size: larger;margin-bottom: 0em;">DreamGaussian (SDS)</p><p style="font-size: large;">(~3mins)</p>
+                                <td width="17%"> 
+                                    <p style="font-size: larger;margin-bottom: 0em;">DreamGaussian</p><p style="font-size: large;">(~3mins)</p>
                                 </td>
-                                <td width="20%"> 
-                                    <p style="font-size: larger;margin-bottom: 0em;">GaussianDreamer (SDS)</p><p style="font-size: large;">(~9mins)</p>
+                                <td width="17%"> 
+                                    <p style="font-size: larger;margin-bottom: 0em;">GaussianDreamer</p><p style="font-size: large;">(~9mins)</p>
                                 </td>
-                                <td width="20%"> 
-                                    <p style="font-size: larger;margin-bottom: 0em;">LucidDreamer (ISM)</p><p style="font-size: large;">(~45mins)</p>
+                                <td width="17%"> 
+                                    <p style="font-size: larger;margin-bottom: 0em;">LucidDreamer</p><p style="font-size: large;">(~45mins)</p>
                                 </td>
-                                <td width="20%"> 
+                                <td width="17%"> 
                                     <p style="font-size: larger;margin-bottom: 0em;"><b>VividDreamer (Ours)</b></p><p style="font-size: large;">(~30mins)</p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
-                    <video autoplay loop playsinline muted style="width: 100%;">
-                        <source type="video/mp4" src="imgs/comp/a_DSLR_photo_of_a_chow_chow_puppy.mp4">
-                    </video>
-                    <p style="font-size: larger;"><i>"A DSLR photo of a <span style="color:#EA700D"><b>chow chow puppy</b></span>"</i></p><br>
-
-                    <video autoplay loop playsinline muted style="width: 100%;">
-                        <source type="video/mp4" src="imgs/comp/a_zoomed_out_DSLR_photo_of_a_wizard_raccoon_casting_a_spell.mp4">
-                    </video>
-                    <p style="font-size: larger;"><i>"A zoomed out DSLR photo of a <span style="color:#EA700D"><b>wizard raccoon</b></span> <span style="color:#52B19A"><b>casting a spell</b></span>"</i></p><br>
-
-                    <video autoplay loop playsinline muted style="width: 100%;">
-                        <source type="video/mp4" src="imgs/comp/a_DSLR_photo_of_a_tray_of_Sushi_containing_pugs.mp4">
-                    </video>
-                    <p style="font-size: larger;"><i>"A DSLR photo of <span style="color:#EA700D"><b>a tray of Sushi</b></span> <span style="color:#52B19A"><b>containing pugs</b></span>"</i></p><br>
-
-                    <video autoplay loop playsinline muted style="width: 100%;">
-                        <source type="video/mp4" src="imgs/comp/a_DSLR_photo_of_a_terracotta_bunny.mp4">
-                    </video>
-                    <p style="font-size: larger;"><i>"A DSLR photo of a <span style="color:#EA700D"><b>terracotta bunny</b></span>"</i></p><br>
-
-                    <video autoplay loop playsinline muted style="width: 100%;">
-                        <source type="video/mp4" src="imgs/comp/a_capybara_wearing_a_top_hat_low_poly.mp4">
-                    </video>
-                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>capybara</b></span> <span style="color:#52B19A"><b>wearing a top hat</b></span>, <span style="color:#52B19A"><b>low poly</b></span>"</i></p><br>
-                    <!-- <video autoplay loop playsinline muted style="width: 100%;">
-                        <source data-src="a_zoomed_out_DSLR_photo_of_a_wizard_raccoon_casting_a_spell.mp4" type="video/mp4" src="imgs/a_zoomed_out_DSLR_photo_of_a_wizard_raccoon_casting_a_spell.mp4">
-                    </video>
-                    <p style="font-size: larger;"><i>"A zoomed out DSLR photo of a <span style="color:#EA700D"><b>wizard raccoon</b></span> <span style="color:#52B19A"><b>casting a spell</b></span>"</i></p> -->
- 
-                    <table style="table-layout: fixed;margin-left: 10%;" width="80%">
+                </div>  
+                <div class="text-center">
+                    <table>
                         <tbody>
                             <tr>
-                                <td width="33%"> 
+                                <td width="15%">
+                                    <!-- <i>"A DSLR photo of a <span style="color:#EA700D"><b>chow chow puppy</b></span>"</i> -->
+                                    <p style="font-size: larger;"><i>"A DSLR photo of a <span style="color:#EA700D"><b>chow chow puppy</b></span>"</i></p>
+                                </td>
+                                <td width="85%">
+                                    <video autoplay loop playsinline muted style="width: 100%;">
+                                        <source type="video/mp4" src="imgs/comp/a_DSLR_photo_of_a_chow_chow_puppy.mp4">
+                                    </video>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="15%">
+                                    <!-- <i>"A DSLR photo of a <span style="color:#EA700D"><b>chow chow puppy</b></span>"</i> -->
+                                    <p style="font-size: larger;"><i>"A zoomed out DSLR photo of a <span style="color:#EA700D"><b>wizard raccoon</b></span> <span style="color:#52B19A"><b>casting a spell</b></span>"</i></p>
+                                </td>
+                                <td width="85%">
+                                    <video autoplay loop playsinline muted style="width: 100%;">
+                                        <source type="video/mp4" src="imgs/comp/a_zoomed_out_DSLR_photo_of_a_wizard_raccoon_casting_a_spell.mp4">
+                                    </video>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="15%">
+                                    <!-- <i>"A DSLR photo of a <span style="color:#EA700D"><b>chow chow puppy</b></span>"</i> -->
+                                    <p style="font-size: larger;"><i>"A DSLR photo of a <span style="color:#EA700D"><b>baby dragon</b></span> <span style="color:#52B19A"><b>drinking_boba</b></span>"</i></p>
+                                </td>
+                                <td width="85%">
+                                    <video autoplay loop playsinline muted style="width: 100%;">
+                                        <source type="video/mp4" src="imgs/comp/a_DSLR_photo_of_a_baby_dragon_drinking_boba.mp4">
+                                    </video>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="15%">
+                                    <!-- <i>"A DSLR photo of a <span style="color:#EA700D"><b>chow chow puppy</b></span>"</i> -->
+                                    <p style="font-size: larger;"><i>"A DSLR photo of <span style="color:#EA700D"><b>a tray of Sushi</b></span> <span style="color:#52B19A"><b>containing pugs</b></span>"</i></p>
+                                </td>
+                                <td width="85%">
+                                    <video autoplay loop playsinline muted style="width: 100%;">
+                                        <source type="video/mp4" src="imgs/comp/a_DSLR_photo_of_a_tray_of_Sushi_containing_pugs.mp4">
+                                    </video>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="15%">
+                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>goat</b></span> <span style="color:#52B19A"><b>drinking beer</b></span>"</i></p>
+                                </td>
+                                <td width="85%">
+                                    <video autoplay loop playsinline muted style="width: 100%;">
+                                        <source type="video/mp4" src="imgs/comp/a_goat_drinking_beer.mp4">
+                                    </video>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td width="15%">
+                                    <p style="font-size: larger;"><i>"A DSLR photo of a <span style="color:#EA700D"><b>terracotta bunny</b></span>"</i></p>
+                                </td>
+                                <td width="85%">
+                                    <video autoplay loop playsinline muted style="width: 100%;">
+                                        <source type="video/mp4" src="imgs/comp/a_DSLR_photo_of_a_terracotta_bunny.mp4">
+                                    </video>
+                                </td>
+                            </tr>
+                            <!-- <tr>
+                                <td width="15%">
+                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>capybara</b></span> <span style="color:#52B19A"><b>wearing a top hat</b></span>, <span style="color:#52B19A"><b>low poly</b></span>"</i></p>
+                                </td>
+                                <td width="85%">
+                                    <video autoplay loop playsinline muted style="width: 100%;">
+                                        <source type="video/mp4" src="imgs/comp/a_capybara_wearing_a_top_hat_low_poly.mp4">
+                                    </video>
+                                </td>
+                            </tr> -->
+                            <!-- <tr>
+                                <td width="15%">
+                                    
+                                </td>
+                                <td width="75%">
+                                    
+                                </td>
+                            </tr> -->
+                        </tbody>
+                    </table>
+                    <hr>
+                </div>
+                <br>
+                <div class="text-left">
+                    <h3>Visual Comparisons (~10 minutes)</h3>
+                </div>
+                <div class="text-center">
+                    <table style="table-layout: fixed;" width="100%">
+                        <tbody>
+                            <tr>
+                                <td width="25%"></td>
+                                <td width="20%"> 
                                     <p style="font-size: larger;margin-bottom: 0em;">GaussianDreamer (SDS)</p><p style="font-size: large;">(~9mins)</p>
                                 </td>
-                                <td width="33%"> 
+                                <td width="20%"> 
                                     <p style="font-size: larger;margin-bottom: 0em;">LucidDreamer (ISM)</p><p style="font-size: large;">(~10mins)</p>
                                 </td>
-                                <td width="33%"> 
+                                <td width="20%"> 
                                     <p style="font-size: larger;margin-bottom: 0em;"><b>VividDreamer (Ours)</b></p><p style="font-size: large;">(~10mins)</p>
                                 </td>
+                                <td width="15%"></td>
                             </tr>
                         </tbody>
                     </table>
-                    <video autoplay loop playsinline muted style="width: 80%;">
-                        <source type="video/mp4" src="imgs/comp/a_DSLR_photo_of_a_corgi_puppy.mp4">
-                    </video>
-                    <p style="font-size: larger;"><i>"A DSLR photo of a <span style="color:#EA700D"><b>corgi puppy</b></span>"</i></p><br>
-
-                    <video autoplay loop playsinline muted style="width: 80%;">
-                        <source type="video/mp4" src="imgs/comp/a_teddy_bear_pushing_a_shopping_cart_full_of_fruits_and_vegetables.mp4">
-                    </video>
-                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>teddy bear</b></span> <span style="color:#52B19A"><b>pushing a shopping cart full of fruits and vegetables</b></span>"</i></p><br>
-
-                    <video autoplay loop playsinline muted style="width: 80%;">
-                        <source type="video/mp4" src="imgs/comp/a_yellow_schoolbus.mp4">
-                    </video>
-                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>yellow schoolbus</b></span>"</i></p>
-                    
+                </div>
+                <div class="text-center">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td width="5%"></td>
+                                <td width="20%">
+                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>pig</b></span> <span style="color:#52B19A"><b>wearing a backpack</b></span>"</i></p>
+                                </td>
+                                <td width="60%">
+                                    <video autoplay loop playsinline muted style="width: 100%;">
+                                        <source type="video/mp4" src="imgs/comp/a_pig_wearing_a_backpack.mp4">
+                                    </video>
+                                </td>
+                                <td width="15%"></td>
+                            </tr>
+                            <tr>
+                                <td width="5%"></td>
+                                <td width="20%">
+                                    <p style="font-size: larger;"><i>"A DSLR photo of a <span style="color:#EA700D"><b>corgi puppy</b></span>"</i></p>
+                                </td>
+                                <td width="60%">
+                                    <video autoplay loop playsinline muted style="width: 100%;">
+                                        <source type="video/mp4" src="imgs/comp/a_DSLR_photo_of_a_corgi_puppy.mp4">
+                                    </video>
+                                </td>
+                                <td width="15%"></td>
+                            </tr>
+                            <tr>
+                                <td width="5%"></td>
+                                <td width="20%">
+                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>yellow schoolbus</b></span>"</i></p>
+                                </td>
+                                <td width="60%">
+                                    <video autoplay loop playsinline muted style="width: 100%;">
+                                        <source type="video/mp4" src="imgs/comp/a_yellow_schoolbus.mp4">
+                                    </video>
+                                </td>
+                                <td width="15%"></td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
+            <hr>
         </div>
     </section>
-    <br>
 
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
-                    <hr style="margin-top:0px">
+                <div class="col-12 text-left">
                     <h3>More Generated Results</h3>
-                    <br> 
+                </div>
+                <div class="text-center">
                     <table style="table-layout: fixed;" width="100%">
+                        <video autoplay loop playsinline muted style="width: 100%;">
+                            <source type="video/mp4" src="imgs/visual/0.mp4">
+                        </video>
                         <tbody>
                             <tr>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/a_zoomed_out_DSLR_photo_of_a_corgi_wearing_a_top_hat.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A zoomed out DSLR photo of a <span style="color:#EA700D"><b>corgi</b></span> <span style="color:#52B19A"><b>wearing a top hat</b></span>"</i></p><br>
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A DSLR photo of a <span style="color:#EA700D"><b>piglet</b></span> <span style="color:#52B19A"><b>sitting in a teacup</b></span>"</i></p>
                                 </td>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/a_bichon_frise_wearing_academic_regalia.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>bichon frise</b></span> <span style="color:#52B19A"><b>wearing academic regalia</b></span>"</i></p><br>
-                                </td>
-
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/a_DSLR_photo_of_a_cocker_spaniel_wearing_a_crown.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A DSLR photo of a <span style="color:#EA700D"><b>cocker spaniel</b></span> <span style="color:#52B19A"><b>wearing a crown</b></span>"</i></p><br>
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A <span style="color:#EA700D"><b>red panda</b></span>"</i></p>
                                 </td>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/a_DSLR_photo_of_a_pomeranian_dog.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A DSLR photo of a <span style="color:#EA700D"><b>pomeranian dog</b></span>"</i></p><br>
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A DSLR photo of a <span style="color:#EA700D"><b>shiba inu</b></span> <span style="color:#52B19A"><b>wearing golf clothes and hat</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A DSLR photo of a <span style="color:#EA700D"><b>cocker spaniel</b></span> <span style="color:#52B19A"><b>wearing a crown</b></span>"</i></p>
                                 </td>
                             </tr>
-                            <br>
-
+                        </tbody>
+                    </table>
+                    <table style="table-layout: fixed;" width="100%">
+                        <video autoplay loop playsinline muted style="width: 100%;">
+                            <source type="video/mp4" src="imgs/visual/1.mp4">
+                        </video>
+                        <tbody>
                             <tr>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/a_DSLR_photo_of_a_squirrel_dressed_like_a_clown.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A DSLR photo of a <span style="color:#EA700D"><b>squirrel</b></span> <span style="color:#52B19A"><b>dressed like a clown</b></span>"</i></p><br>
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A zoomed out DSLR photo of a <span style="color:#EA700D"><b>corgi</b></span> <span style="color:#52B19A"><b>wearing a top hat</b></span>"</i></p>
                                 </td>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/a_red_panda.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>red panda</b></span>"</i></p><br>
-                                </td>
-
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/a_zoomed_out_DSLR_photo_of_a_kingfisher_bird.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A zoomed out DSLR photo of a <span style="color:#EA700D"><b>kingfisher bird</b></span>"</i></p><br>
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A DSLR photo of a <span style="color:#EA700D"><b>squirrel</b></span> <span style="color:#52B19A"><b>dressed like a clown</b></span>"</i></p>
                                 </td>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/a_DSLR_photo_of_a_mandarin_duck_swimming_in_a_pond.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A DSLR photo of a <span style="color:#EA700D"><b>mandarin duck</b></span> <span style="color:#52B19A"><b>swimming in a pond</b></span>"</i></p><br>
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A zoomed out DSLR photo of a <span style="color:#EA700D"><b>kingfisher bird</b></span>"</i></p>
                                 </td>
-                            </tr><br>
-
+                                <td width="25%"> 
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A DSLR photo of a <span style="color:#EA700D"><b>mandarin duck</b></span> <span style="color:#52B19A"><b>swimming in a pond</b></span>"</i></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="table-layout: fixed;" width="100%">
+                        <video autoplay loop playsinline muted style="width: 100%;">
+                            <source type="video/mp4" src="imgs/visual/2.mp4">
+                        </video>
+                        <tbody>
                             <tr>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/a_plush_toy_of_a_corgi_nurse.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>plush toy</b></span> of a <span style="color:#52B19A"><b>corgi nurse</b></span>"</i></p><br>
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A <span style="color:#EA700D"><b>plush toy</b></span> of a <span style="color:#52B19A"><b>corgi nurse</b></span>"</i></p>
                                 </td>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/a_zoomed_out_DSLR_photo_of_a_lion's_mane_jellyfish.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A zoomed out DSLR photo of a <span style="color:#EA700D"><b>lion's mane jellyfish</b></span>"</i></p><br>
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A <span style="color:#EA700D"><b>plush dragon toy</b></span>"</i></p>
                                 </td>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/an_airplane_made_out_of_wood.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"An <span style="color:#EA700D"><b>airplane</b></span> <span style="color:#52B19A"><b>made out of wood</b></span>"</i></p><br>
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A DSLR photo of a <span style="color:#EA700D"><b>hippo</b></span> with <span style="color:#52B19A"><b>wearing a sweater</b></span>"</i></p>
                                 </td>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/a_zoomed_out_DSLR_photo_of_a_hippo_made_out_of_chocolate.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A DSLR photo of a <span style="color:#EA700D"><b>hippo</b></span> <span style="color:#52B19A"><b>made out of chocolate</b></span>"</i></p><br>
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A zoomed out DSLR photo of a <span style="color:#EA700D"><b>lion's mane jellyfish</b></span>"</i></p>
                                 </td>
-                            </tr><br>
-
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="table-layout: fixed;" width="100%">
+                        <video autoplay loop playsinline muted style="width: 100%;">
+                            <source type="video/mp4" src="imgs/visual/3.mp4">
+                        </video>
+                        <tbody>
                             <tr>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/a_DSLR_photo_of_a_delicious_chocolate_brownie_dessert_with_ice_cream_on_the_side.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A delicious <span style="color:#EA700D"><b>chocolate brownie dessert</b></span> with <span style="color:#52B19A"><b>ice cream</b></span>"</i></p><br>
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A DSLR photo of a <span style="color:#EA700D"><b>robot dinosaur</b></span>"</i></p>
                                 </td>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/an_erupting_volcano,_aerial_view.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"An <span style="color:#EA700D"><b>erupting volcano</b></span>"</i></p><br>
-                                </td>
-
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/A_Panther_De_Ville_car.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>Panther De Ville car</b></span>"</i></p><br>
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A DSLR photo of a <span style="color:#52B19A"><b>shiny silver</b></span> <span style="color:#EA700D"><b>robot_cat</b></span>"</i></p>
                                 </td>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/visual/a_DSLR_photo_of_the_leaning_tower_of_Pisa,_aerial_view.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A DSLR photo of the <span style="color:#EA700D"><b>leaning tower of Pisa</b></span>"</i></p><br>
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A DSLR photo of a <span style="color:#EA700D"><b>hippo</b></span> <span style="color:#52B19A"><b>made out of chocolate</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;margin-top:-2.5em"><i>"A DSLR photo of an <span style="color:#EA700D"><b>origami hippo</b></span> <span style="color:#52B19A"><b>in a river</b></span>"</i></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="table-layout: fixed;" width="100%">
+                        <video autoplay loop playsinline muted style="width: 100%;">
+                            <source type="video/mp4" src="imgs/visual/4.mp4">
+                        </video>
+                        <tbody>
+                            <tr>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;margin-top:-3.5em"><i>"An <span style="color:#EA700D"><b>airplane</b></span> <span style="color:#52B19A"><b>made out of wood</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;margin-top:-3.5em"><i>"A <span style="color:#EA700D"><b>Panther De Ville car</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;margin-top:-3.5em"><i>"A DSLR photo of a <span style="color:#EA700D"><b>steam engine train</b></span>, <span style="color:#52B19A"><b>high resolution</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;margin-top:-3.5em"><i>"A DSLR photo of an <span style="color:#EA700D"><b>amigurumi motorcycle</b></span>"</i></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="table-layout: fixed;" width="100%">
+                        <video autoplay loop playsinline muted style="width: 100%;">
+                            <source type="video/mp4" src="imgs/visual/5.mp4">
+                        </video>
+                        <tbody>
+                            <tr>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;margin-top:-1em"><i>"A delicious <span style="color:#EA700D"><b>chocolate brownie dessert</b></span> with <span style="color:#52B19A"><b>ice cream</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;margin-top:-1em"><i>"A DSLR photo of an <span style="color:#EA700D"><b>ice cream sundae</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;margin-top:-1em"><i>"A DSLR photo of <span style="color:#EA700D"><b>spaghetti and meatballs</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;margin-top:-1em"><i>"<span style="color:#EA700D"><b>Tower Bridge</b></span> <span style="color:#52B19A"><b>made out of gingerbread and candy</b></span>"</i></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="table-layout: fixed;" width="100%">
+                        <video autoplay loop playsinline muted style="width: 100%;">
+                            <source type="video/mp4" src="imgs/visual/6.mp4">
+                        </video>
+                        <tbody>
+                            <tr>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;margin-top:-1em"><i>"A <span style="color:#EA700D"><b>20-sided die</b></span> <span style="color:#52B19A"><b>made out of glass</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;margin-top:-1em"><i>"A DSLR photo of a <span style="color:#EA700D"><b>football helmet</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;margin-top:-1em"><i>"A DSLR photo of the <span style="color:#EA700D"><b>leaning tower of Pisa</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;margin-top:-1em"><i>"An <span style="color:#EA700D"><b>erupting volcano</b></span>"</i></p>
                                 </td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </div>
+            <hr>
         </div>
     </section>
-    <br>
 
     <section>
         <div class="container">
             <div class="row">
-                <div class="col-12 text-center">
-                    <hr style="margin-top:0px">
+                <div class="col-12 text-left">
                     <h3>Applications</h3>
-                    <br> 
-                    <h4>3D Portrait and Avatar Creation</h4>
-                    <br>
+                </div>
+                <div class="col-12 text-center">
+                    <h4>3D Portrait Generation</h4>
                     <table style="table-layout: fixed;" width="100%">
+                        <video autoplay loop playsinline muted style="width: 100%;">
+                            <source type="video/mp4" src="imgs/avatar/0.mp4">
+                        </video>
                         <tbody>
                             <tr>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/avatar/a boy with facial painting, head, HDR, photorealistic, 8K.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>boy</b></span> <span style="color:#52B19A"><b>with facial painting</b></span>, head, HDR, photorealistic, 8K"</i></p><br>
+                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>boy</b></span> <span style="color:#52B19A"><b>with facial painting</b></span>, head, HDR, photorealistic, 8K"</i></p>
                                 </td>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/avatar/Barack Obama, black hair, head, HDR, photorealistic, 8K.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Barack Obama</b></span>, head, HDR, photorealistic, 8K"</i></p><br>
-                                </td>
-
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/avatar/portrait beautiful young norwegian woman, in mechanical armor steampunk cute-fine-face, long hair, bangs, fine details. realistic..mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"Portrait of <span style="color:#EA700D"><b>young norwegian woman</b></span>, <span style="color:#52B19A"><b>steampunk, long hair</b></span>"</i></p><br>
+                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Barack Obama</b></span>, head, HDR, photorealistic, 8K"</i></p>
                                 </td>
                                 <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/avatar/Robert Pattinson, head, HDR, 8K.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Robert Pattinson</b></span>, head, HDR, photorealistic, 8K"</i></p><br>
+                                    <p style="font-size: larger;"><i>"Portrait of <span style="color:#EA700D"><b>young norwegian woman</b></span>, <span style="color:#52B19A"><b>steampunk, long hair</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Robert Pattinson</b></span>, head, HDR, photorealistic, 8K"</i></p>
                                 </td>
                             </tr>
-
-                            <br>
-
-                            <tr>
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/avatar/Iron_Man.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Iron man</b></span>"</i></p><br>
-                                </td>
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/avatar/Ant-man.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Ant man</b></span>"</i></p><br>
-                                </td>
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/avatar/Batman.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Bat man</b></span>"</i></p><br>
-                                </td>
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/avatar/groot.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Groot</b></span>"</i></p><br>
-                                </td>
-                            </tr>
-
-                            <br>
-
-                            <tr>
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/avatar/sun_wukong.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Sun Wukong</b></span>"</i></p><br>
-                                </td>
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/avatar/Captain_Marvel.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Captain Marvel</b></span>"</i></p><br>
-                                </td>
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/avatar/A_young_man_wearing_a_turtleneck.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>young man</b></span> <span style="color:#52B19A"><b>wearing a turtleneck</b></span>"</i></p><br>
-                                </td>
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/avatar/a_Mediterranean_man_with_a_beard_wearing_a_white_linen_shirt.mp4">
-                                    </video>
-                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>Mediterranean</b></span> <span style="color:#52B19A"><b>with beard wearing white linen shirt</b></span>"</i></p><br>
-                                </td>
-                            </tr>
-
                         </tbody>
                     </table>
-                    <br> 
-                    <h4>3D User-guided Editing</h4>
-                    <br>
+                    <hr>
+                    <h4>3D Avatar Generation</h4>
+                    <table style="table-layout: fixed;" width="100%">
+                        <video autoplay loop playsinline muted style="width: 100%;">
+                            <source type="video/mp4" src="imgs/avatar/1.mp4">
+                        </video>
+                        <tbody>
+                            <tr>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Iron man</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Ant man</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Bat man</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Groot</b></span>"</i></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="table-layout: fixed;" width="100%">
+                        <video autoplay loop playsinline muted style="width: 100%;">
+                            <source type="video/mp4" src="imgs/avatar/2.mp4">
+                        </video>
+                        <tbody>
+                            <tr>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Sun Wukong</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;"><i>"<span style="color:#EA700D"><b>Captain Marvel</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>young man</b></span> <span style="color:#52B19A"><b>wearing a turtleneck</b></span>"</i></p>
+                                </td>
+                                <td width="25%"> 
+                                    <p style="font-size: larger;"><i>"A <span style="color:#EA700D"><b>Mediterranean</b></span> <span style="color:#52B19A"><b>with beard wearing white linen shirt</b></span>"</i></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <hr>
+                    <h4>Text-to-3D Editing</h4>
                     <table style="table-layout: fixed;margin-bottom: -4em;">
-                        <tbody>
-                            <tr>
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/editing/a_DSLR_photo_of_a_corgi_puppy.mp4">
-                                    </video>
-                                </td>
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/editing/a_DSLR_photo_of_a_cat.mp4">
-                                    </video>
-                                </td>
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/editing/a_red_panda.mp4">
-                                    </video>
-                                </td>
-                                <td width="25%"> 
-                                    <video autoplay loop playsinline muted style="width: 100%;">
-                                        <source type="video/mp4" src="imgs/editing/a_panda.mp4">
-                                    </video>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table>
-                    <table style="table-layout: fixed;margin-top: 0em;">
-                        <tbody>
-                            <tr>
-                                <td width="50%">
-                                    <img src="imgs/editing/edit1.png" width="100%"/>
-                                </td>
-                                <td width="50%">
-                                    <img src="imgs/editing/edit2.png" width="100%"/>
-                                </td>
-                            </tr>
-                        </tbody>
+                        <video autoplay loop playsinline muted style="width: 100%;">
+                            <source type="video/mp4" src="imgs/editing/0.mp4">
+                        </video>
+                        <img src="imgs/editing/edit.png" width="100%" style="margin-top: -3.5em; margin-bottom: -1em;"/>
+                        <hr style="margin-top:0px">
                     </table>
                 </div>
             </div>
+            
         </div>
     </section>
-
+    <br>
+    <br>
+    <br>
   <!-- citing -->
     <div class="container">
         <div class="row ">
             <div class="col-12">
                 <h3>Citation</h3>
-                <hr style="margin-top:0px">
                 <pre style="background-color: #e9eeef;padding: 1.25em 1.5em">
 <code>@article{chen2024vividdreamer,
     title={VividDreamer: Towards High-Fidelity and Efficient Text-to-3D Generation},
